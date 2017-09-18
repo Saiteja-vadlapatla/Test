@@ -1,0 +1,51 @@
+<style>
+    .fig{
+        transform: translate(-1200px, -25px) rotate(360deg);
+    }
+</style>
+<script src="big_test.js"></script>
+
+<h1>Product bill</h1>
+<div class="fig" id="div2" style="float:right"></div>
+<form action="" onsubmit="Total();return false">
+<select name="list" id="1" onchange="Price(this.value,this.id)" autofocus>
+    <option value="0" selected>Select</option>
+    <option value="500" id="bat">Bat</option>
+    <option value="100" id="ball">Ball</option>
+    <option value="300" id="wicket">Wickets</option>
+</select>
+<br>
+Price: <span id="price"></span> <br> <br>
+
+<fieldset style="position: fixed">
+    <legend><strong>Quantity:</strong></legend>
+    <input type="radio" value="1" id="one" name="quantity" onclick="AddQuant(this.value)" autofocus>One
+    <input type="radio" value="2" id="two" name="quantity" onclick="AddQuant(this.value)">Two
+    <input type="radio" value="3" id="three" name="quantity" onclick="AddQuant(this.value)">Three <br><br>
+
+    Quantity Selected: 
+    <span id="quant"></span>
+</fieldset>
+
+
+<br><br><br><br><br><br> 
+<fieldset style="position: fixed">
+    <legend><strong>Payment mode:</strong></legend>
+    <input type="radio" value="0" id="cash" name="pay" onclick="AddPay(this.value)" autofocus>Cash
+    <input type="radio" value="40" id="cash" name="pay" onclick="AddPay(this.value)">Card
+    <input type="radio" value="40" id="cash" name="pay" onclick="AddPay(this.value)">Paytm <br><br>
+    Payment Charges: 
+    <span id="paycharge"></span>
+</fieldset>
+
+<br><br><br><br>
+
+<br><br>
+<input type="checkbox" id="c1" value="40" onchange="AddDel(this.checked)" autofocus>Door Delivery Charges:<span id="del"> </span>
+
+<br><br>
+<input type="submit" id="submit" autofocus>
+<input type="reset" onclick="Purge()"><br><br>
+<underline>Summary:</underline><br>
+<p id="summary"></p>
+</form>
